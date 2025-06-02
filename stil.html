@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon</title>
+    <link rel="stylesheet" href="css/salon.css">
+    <link rel="stylesheet" href="css/stil-nav.css">
+    <link rel="stylesheet" href="css/envelope.css">
+    <link rel="stylesheet" href="css/mobile-menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">Ana Sayfa</a>
+            <div class="nav-links">
+                <div class="nav-section">
+                    <a href="salon.html" class="nav-link active">Salon</a>
+                    <a href="salon-foto.html" class="nav-link">Salon Fotoğrafları</a>
+                    <a href="salon-video.html" class="nav-link">Salon Videoları</a>
+                </div>
+                <div class="nav-section">
+                    <a href="stil.html" class="nav-link">Stil</a>
+                    <a href="stil-foto.html" class="nav-link">Stil Fotoğrafları</a>
+                    <a href="stil-video.html" class="nav-link">Stil Videoları</a>
+                    <a href="iletisim.html" class="nav-link">İletişim</a>
+                </div>
+            </div>
+            <!-- Hamburger button will be added here by JavaScript -->
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card" onclick="window.location.href='stil-foto.html'">
+            <img src="images/photo.gif" alt="Fotoğraflar" class="card-image">
+            <div class="card-overlay">
+                <h2>Fotoğraflar</h2>
+            </div>
+            <div class="social-icons">
+                <a href="stil-foto.html" class="view-more">
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        <div class="card" onclick="window.location.href='stil-video.html'">
+            <img src="images/video.gif" alt="Videolar" class="card-image">
+            <div class="card-overlay">
+                <h2>Videolar</h2>
+            </div>
+            <div class="social-icons">
+                <a href="stil-video.html" class="view-more">
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="package-button-container">
+        <div class="envelope-btn">
+            <i class="fas fa-gift"></i>
+            <span>PAKET</span>
+        </div>
+    </div>
+    
+    <footer class="contact-section">
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="address-card">
+                    <a href="https://maps.app.goo.gl/Yc6C6HboUaJ7bcnE6" target="_blank" class="address-link">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Nazilli/Aydın</span>
+                    </a>
+                </div>
+                <div class="social-card">
+                    <a href="https://www.instagram.com/stilfotografcilik09/" target="_blank" class="instagram-link">
+                        <i class="fab fa-instagram"></i>
+                        <span>@stilfotografcilik09</span>
+                    </a>
+                </div>
+                <div class="social-card">
+                    <a href="https://www.youtube.com/@stilfotografcilik09" target="_blank" class="youtube-link">
+                        <i class="fab fa-youtube"></i>
+                        <span>@stilfotografcilik09</span>
+                    </a>
+                </div>
+                <div class="social-card">
+                    <a href="https://wa.me/905543913378" target="_blank" class="whatsapp-link">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+                <div class="social-card">
+                    <a href="tel:+90 554 391 33 78" class="phone-link">
+                        <i class="fas fa-phone"></i>
+                        <span>0 554 391 33 78</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/salon.js"></script>
+    <script src="js/envelope.js"></script>
+    <script src="js/mobile-menu.js"></script>
+        <script src="/js/back-button.js"></script>
+
+    <script>
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            const navContainer = document.querySelector('.nav-container');
+            const body = document.body;
+            
+            if (hamburger) {
+                hamburger.addEventListener('click', function() {
+                    // Toggle active class on hamburger and nav-links
+                    this.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                    body.classList.toggle('menu-open');
+                    
+                    // Toggle aria-expanded for accessibility
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true' || false;
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    
+                    // Toggle aria-label based on state
+                    if (isExpanded) {
+                        this.setAttribute('aria-label', 'Menüyü aç');
+                    } else {
+                        this.setAttribute('aria-label', 'Menüyü kapat');
+                    }
+                });
+                
+                // Close menu when clicking on a nav link
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburger.classList.remove('active');
+                        navLinks.classList.remove('active');
+                        body.classList.remove('menu-open');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                        hamburger.setAttribute('aria-label', 'Menüyü aç');
+                    });
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!navContainer.contains(e.target) && !hamburger.contains(e.target)) {
+                        hamburger.classList.remove('active');
+                        navLinks.classList.remove('active');
+                        body.classList.remove('menu-open');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                        hamburger.setAttribute('aria-label', 'Menüyü aç');
+                    }
+                });
+                
+                // Prevent body scroll when menu is open
+                const observer = new MutationObserver(() => {
+                    if (body.classList.contains('menu-open')) {
+                        body.style.overflow = 'hidden';
+                    } else {
+                        body.style.overflow = '';
+                    }
+                });
+                
+                observer.observe(body, { attributes: true, attributeFilter: ['class'] });
+            }
+        });
+    </script>
+</body>
+</html>
