@@ -50,6 +50,29 @@ body {
 
 .nav-logo:hover {
     color: #ccc;
+    opacity: 0.9;
+}
+
+.nav-logo img.logo-image {
+    height: 2.5rem;  /* Daha büyük logo */
+    width: auto;
+    max-width: 200px;  /* Maksimum genişlik */
+    vertical-align: middle;
+    transition: all 0.3s ease;
+    object-fit: contain;
+}
+
+.nav-logo:hover img.logo-image {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+/* Mobil görünüm için logo boyutunu ayarlama */
+@media (max-width: 992px) {
+    .nav-logo img.logo-image {
+        height: 2.2rem;
+        max-width: 180px;
+    }
 }
 
 .nav-links {
