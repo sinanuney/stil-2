@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon</title>
+    <link rel="stylesheet" href="css/salon.css">
+    <link rel="stylesheet" href="css/stil-nav.css">
+    <link rel="stylesheet" href="css/envelope.css">
+    <link rel="stylesheet" href="css/mobile-menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+        
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.15);
+            --glass-border: rgba(255, 255, 255, 0.18);
+            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        @keyframes slide {
+            0% { transform: translateX(-50%) translateY(-50%) scale(1.2) rotate(0deg); }
+            50% { transform: translateX(-50%) translateY(-50%) scale(1.3) rotate(0.5deg); }
+            100% { transform: translateX(-50%) translateY(-50%) scale(1.2) rotate(0deg); }
+        }
+        
+        @keyframes slide2 {
+            0% { transform: translateX(-50%) translateY(-50%) scale(1.3) rotate(180deg); }
+            50% { transform: translateX(-50%) translateY(-50%) scale(1.4) rotate(180.5deg); }
+            100% { transform: translateX(-50%) translateY(-50%) scale(1.3) rotate(180deg); }
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        body::before,
+        body::after {
+            content: '';
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                linear-gradient(
+                    90deg,
+                    rgba(15, 15, 15, 0) 0%,
+                    rgba(30, 30, 30, 0.1) 50%,
+                    rgba(15, 15, 15, 0) 100%
+                );
+            transform-origin: center;
+            animation: slide 30s linear infinite;
+            z-index: -2;
+        }
+        
+        body::after {
+            background: 
+                linear-gradient(
+                    90deg,
+                    rgba(25, 25, 25, 0) 0%,
+                    rgba(50, 50, 50, 0.1) 50%,
+                    rgba(25, 25, 25, 0) 100%
+                );
+            animation: slide2 40s linear infinite;
+            z-index: -1;
+        }
+        
+        .contact-container {
+            max-width: 1200px;
+            margin: 100px auto 50px;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            perspective: 1000px;
+        }
+        
+        @keyframes rotate {
+            0% { --angle: 0deg; }
+            100% { --angle: 360deg; }
+        }
+        
+        @property --angle {
+            syntax: '<angle>';
+            initial-value: 0deg;
+            inherits: false;
+        }
+        
+        .location {
+            --angle: 0deg;
+            background: rgba(15, 15, 15, 0.3);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            transform-style: preserve-3d;
+            transition: var(--transition);
+            position: relative;
+            aspect-ratio: 9/16;
+            display: flex;
+            flex-direction: column;
+            animation: float 6s ease-in-out infinite;
+            max-width: 350px;
+            margin: 0 auto;
+        }
+        
+        .location::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: conic-gradient(
+                from var(--angle),
+                transparent 0deg,
+                rgba(255, 255, 255, 0.1) 30deg,
+                rgba(255, 255, 255, 0.05) 60deg,
+                transparent 120deg,
+                transparent 180deg,
+                rgba(255, 255, 255, 0.1) 210deg,
+                rgba(255, 255, 255, 0.05) 240deg,
+                transparent 300deg,
+                transparent 360deg
+            );
+            border-radius: 22px;
+            z-index: -1;
+            animation: rotate 8s linear infinite;
+            opacity: 0.7;
+        }
+        
+        .location::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: conic-gradient(
+                from var(--angle),
+                transparent 0deg,
+                rgba(255, 255, 255, 0.05) 30deg,
+                transparent 60deg,
+                transparent 180deg,
+                rgba(255, 255, 255, 0.05) 210deg,
+                transparent 240deg
+            );
+            border-radius: 20px;
+            z-index: -1;
+            animation: rotate 12s linear infinite reverse;
+            opacity: 0.5;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotateX(0) rotateY(0); }
+            50% { transform: translateY(-10px) rotateX(2deg) rotateY(2deg); }
+        }
+        
+        .location:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+        
+        .location:nth-child(1) { animation-delay: 0s; }
+        .location:nth-child(2) { animation-delay: 0.2s; }
+        .location:nth-child(3) { animation-delay: 0.4s; }
+        
+        .location-header {
+            background: rgba(0, 0, 0, 0.4);
+            color: white;
+            padding: 12px 15px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 1;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        
+        .location-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #fff, transparent);
+        }
+        
+        .location-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 15px;
+            position: relative;
+            overflow: hidden;
+            gap: 12px;
+        }
+        
+        .map-container {
+            height: 180px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+        
+        .map-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+        
+        .contact-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 12px 0 0;
+            background: transparent;
+            border-radius: 12px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255,255,255,0.3) transparent;
+        }
+        
+        .contact-info::-webkit-scrollbar {
+            width: 4px;
+        }
+        
+        .contact-info::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        .contact-info::-webkit-scrollbar-thumb {
+            background-color: rgba(255,255,255,0.3);
+            border-radius: 4px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin: 0 0 8px;
+            color: #fff;
+            text-decoration: none;
+            transition: var(--transition);
+            padding: 8px 10px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(5px);
+        }
+        
+        .contact-item i {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 1rem;
+            color: #fff;
+            transition: var(--transition);
+        }
+        
+        .contact-item:hover i {
+            transform: scale(1.1);
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: auto;
+            padding: 15px 0 0;
+            flex-wrap: wrap;
+        }
+        
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            flex-shrink: 0;
+        }
+        
+        .social-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: translateX(-100%);
+            transition: 0.5s;
+        }
+        
+        .social-icon:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .whatsapp { background: rgba(37, 211, 102, 0.7); }
+        .instagram { background: rgba(225, 48, 108, 0.7); }
+        .youtube { background: rgba(255, 0, 0, 0.7); }
+        .phone { background: rgba(52, 183, 241, 0.7); }
+        .map { background: rgba(76, 175, 80, 0.7); }
+        
+        /* Responsive Design */
+        @media (max-width: 1199px) {
+            .contact-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                padding: 20px 15px;
+                gap: 20px;
+            }
+            
+            .location {
+                aspect-ratio: 9/16;
+                max-width: 100%;
+            }
+            
+            .location-header {
+                font-size: 1rem;
+                padding: 12px 15px;
+            }
+            
+            .contact-item {
+                font-size: 0.9rem;
+                padding: 6px 10px;
+            }
+            
+            .social-icon {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .contact-container {
+                margin: 60px auto 20px;
+                padding: 0 10px;
+            }
+            
+            .location {
+                aspect-ratio: 9/16;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">Ana Sayfa</a>
+            <div class="nav-links">
+                <div class="nav-section">
+                    <a href="salon.html" class="nav-link active">Salon</a>
+                    <a href="salon-foto.html" class="nav-link">Salon Fotoğrafları</a>
+                    <a href="salon-video.html" class="nav-link">Salon Videoları</a>
+                </div>
+                <div class="nav-section">
+                    <a href="stil.html" class="nav-link">Stil</a>
+                    <a href="stil-foto.html" class="nav-link">Stil Fotoğrafları</a>
+                    <a href="stil-video.html" class="nav-link">Stil Videoları</a>
+                </div>
+            </div>
+            <button class="hamburger" aria-label="Menü">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="contact-container">
+        <!-- Selahattin Acar Düğün Salonu -->
+        <div class="location">
+            <div class="location-header">Selahattin Acar Düğün Salonu</div>
+            <div class="location-content">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3147.6224566575725!2d28.341061511935454!3d37.915886471833204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b8b8d780a1a781%3A0x721d98330e7bf1c9!2zU2VsYWhhdHRpbiBBY2FyIETDvMSfw7xuIFNhbG9udQ!5e0!3m2!1str!2str!4v1748878811301!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="contact-info">
+                    <a href="tel:+905444126197" class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>0 544 412 61 97</span>
+                    </a>
+                    <a href="https://wa.me/905444126197" target="_blank" class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="https://www.instagram.com/selahattin_acar_dugun_salonu" target="_blank" class="contact-item">
+                        <i class="fab fa-instagram"></i>
+                        <span>@salon</span>
+                    </a>
+                    <a href="https://www.youtube.com/@stilfotografcilik09" target="_blank" class="contact-item">
+                        <i class="fab fa-youtube"></i>
+                        <span>@stilfotografcilik09</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stil Nazilli -->
+        <div class="location">
+            <div class="location-header">Stil Nazilli</div>
+            <div class="location-content">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3147.633359842111!2d28.32253791193541!3d37.91563167183323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b8b8c048cf8891%3A0x37cc3d4ef3d7902!2sStil%20Digital%20Foto%C4%9Fraf!5e0!3m2!1str!2str!4v1748878867143!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="contact-info">
+                    <a href="tel:+905543913378" class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>0 554 391 33 78</span>
+                    </a>
+                    <a href="https://wa.me/905543913378" target="_blank" class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="https://www.instagram.com/stilfotografcilik09/" target="_blank" class="contact-item">
+                        <i class="fab fa-instagram"></i>
+                        <span>@stilfotografcilik09</span>
+                    </a>
+                    <a href="https://www.youtube.com/@stilfotografcilik09" target="_blank" class="contact-item">
+                        <i class="fab fa-youtube"></i>
+                        <span>@stilfotografcilik09</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stil Aydın -->
+        <div class="location">
+            <div class="location-header">Stil Aydın</div>
+            <div class="location-content">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3250.4578829377815!2d27.839913884814774!3d37.84541075886208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b92b7f46564425%3A0xe40781786730cc8c!2zU3RpbCBGb3RvxJ9yYWbDp8SxbMSxayBBeWTEsW4!5e0!3m2!1str!2str!4v1748878900537!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                <div class="contact-info">
+                    <a href="tel:+905543131356" class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>0 554 313 13 56</span>
+                    </a>
+                    <a href="https://wa.me/905543131356" target="_blank" class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="https://www.instagram.com/stilfotografcilik09/" target="_blank" class="contact-item">
+                        <i class="fab fa-instagram"></i>
+                        <span>@stilfotografcilik09</span>
+                    </a>
+                    <a href="https://www.youtube.com/@stilfotografcilik09" target="_blank" class="contact-item">
+                        <i class="fab fa-youtube"></i>
+                        <span>@stilfotografcilik09</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Icons Row -->
+        <div class="social-icons">
+            <a href="tel:+905543913378" class="social-icon phone">
+                <i class="fas fa-phone"></i>
+            </a>
+            <a href="https://wa.me/905543913378" target="_blank" class="social-icon whatsapp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.instagram.com/stilfotografcilik09/" target="_blank" class="social-icon instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@stilfotografcilik09" target="_blank" class="social-icon youtube">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="#" class="social-icon map">
+                <i class="fas fa-map-marker-alt"></i>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            const navContainer = document.querySelector('.nav-container');
+            const body = document.body;
+            
+            if (hamburger) {
+                hamburger.addEventListener('click', function() {
+                    // Toggle active class on hamburger and nav-links
+                    this.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                    body.classList.toggle('menu-open');
+                    
+                    // Toggle aria-expanded for accessibility
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true' || false;
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    
+                    // Toggle aria-label based on state
+                    if (isExpanded) {
+                        this.setAttribute('aria-label', 'Menüyü aç');
+                    } else {
+                        this.setAttribute('aria-label', 'Menüyü kapat');
+                    }
+                });
+                
+                // Close menu when clicking on a nav link
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburger.classList.remove('active');
+                        navLinks.classList.remove('active');
+                        body.classList.remove('menu-open');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                        hamburger.setAttribute('aria-label', 'Menüyü aç');
+                    });
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!navContainer.contains(e.target) && !hamburger.contains(e.target)) {
+                        hamburger.classList.remove('active');
+                        navLinks.classList.remove('active');
+                        body.classList.remove('menu-open');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                        hamburger.setAttribute('aria-label', 'Menüyü aç');
+                    }
+                });
+                
+                // Prevent body scroll when menu is open
+                const observer = new MutationObserver(() => {
+                    if (body.classList.contains('menu-open')) {
+                        body.style.overflow = 'hidden';
+                    } else {
+                        body.style.overflow = '';
+                    }
+                });
+                
+                observer.observe(body, { attributes: true, attributeFilter: ['class'] });
+            }
+        });
+    </script>
+</body>
+</html>
