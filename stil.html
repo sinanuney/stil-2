@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta name="theme-color" content="#1a1a1a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Stil</title>
+    <link rel="stylesheet" href="css/stil.css">
+    <link rel="stylesheet" href="css/mobile-menu.css">
+    <link rel="stylesheet" href="css/stil-nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">Ana Sayfa</a>
+            <div class="nav-links">
+                <div class="nav-section">
+                    <a href="salon.html" class="nav-link">Salon</a>
+                    <a href="salon-foto.html" class="nav-link">Salon Fotoğrafları</a>
+                    <a href="salon-video.html" class="nav-link">Salon Videoları</a>
+            <!-- Hamburger button will be added here by JavaScript -->
+                </div>
+                <div class="nav-section">
+                    <a href="stil.html" class="nav-link active">Stil</a>
+                    <a href="stil-foto.html" class="nav-link">Stil Fotoğrafları</a>
+                    <a href="stil-video.html" class="nav-link">Stil Videoları</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card" onclick="window.location.href='stil-foto.html'">
+            <img src="images/photo.gif" alt="Fotoğraflar" class="card-image">
+            <div class="card-overlay">
+                <h2>Fotoğraflar</h2>
+            </div>
+            <div class="social-icons">
+                <a href="stil-foto.html" class="view-more">
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        <div class="card" onclick="window.location.href='stil-video.html'">
+            <img src="images/video.gif" alt="Videolar" class="card-image">
+            <div class="card-overlay">
+                <h2>Videolar</h2>
+            </div>
+            <div class="social-icons">
+                <a href="stil-video.html" class="view-more">
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="contact-section">
+    <div class="contact-container">
+        <div class="contact-info">
+            <div class="address-card">
+                <a href="https://maps.app.goo.gl/Yc6C6HboUaJ7bcnE6" target="_blank" class="address-link">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Nazilli/Aydın</span>
+                </a>
+            </div>
+            <div class="social-card">
+                <a href="https://www.instagram.com/stilfotografcilik09/" target="_blank" class="instagram-link">
+                    <i class="fab fa-instagram"></i>
+                    <span>@stilfotografcilik09</span>
+                </a>
+            </div>
+            <div class="social-card">
+                <a href="https://www.youtube.com/@stilfotografcilik09" target="_blank" class="youtube-link">
+                    <i class="fab fa-youtube"></i>
+                    <span>@stilfotografcilik09</span>
+                </a>
+            </div>
+            <div class="social-card">
+                <a href="https://wa.me/905543913378" target="_blank" class="whatsapp-link">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+            <div class="social-card">
+                <a href="tel:+90 554 391 33 78" class="phone-link">
+                    <i class="fas fa-phone"></i>
+                    <span>0 554 391 33 78</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="js/stil.js"></script>
+    <script src="js/mobile-menu.js"></script>
+</body>
+</html>

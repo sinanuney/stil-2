@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Galerisi</title>
+    <link rel="stylesheet" href="css/salon-video.css">
+    <link rel="stylesheet" href="css/mobile-menu.css">
+    <link rel="stylesheet" href="css/stil-nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Mobile menu styles are in mobile-menu.css */
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (hamburger) {
+                hamburger.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                });
+                
+                // Close menu when clicking on a nav link
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburger.classList.remove('active');
+                        navLinks.classList.remove('active');
+                    });
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">Ana Sayfa</a>
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <div class="nav-links">
+                <div class="nav-section">
+                    <a href="salon.html" class="nav-link">Salon</a>
+                    <a href="salon-foto.html" class="nav-link">Salon Fotoğrafları</a>
+                    <a href="salon-video.html" class="nav-link active">Salon Videoları</a>
+                </div>
+                <div class="nav-section">
+                    <a href="stil.html" class="nav-link">Stil</a>
+                    <a href="stil-foto.html" class="nav-link">Stil Fotoğrafları</a>
+                    <a href="stil-video.html" class="nav-link">Stil Videoları</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="categories">
+            <button class="category-btn active" data-category="all">Tümü</button>
+            <button class="category-btn" data-category="tanitim">Tanıtım</button>
+            <button class="category-btn" data-category="yaz">Yazlık</button>
+            <button class="category-btn" data-category="kis">Kışlık</button>
+            <button class="category-btn" data-category="salon">Salon Full Video</button>
+            <button class="category-btn" data-category="klip">Klip</button>
+            <button class="category-btn" data-category="hikaye">Düğün Hikayesi</button>
+            <button class="category-btn" data-category="dugun">Düğün</button>
+            <button class="category-btn" data-category="kina">Kına</button>
+            <button class="category-btn" data-category="kina-dugun">Kına-Düğün</button>
+            <button class="category-btn" data-category="nisan">Nişan</button>
+            <button class="category-btn" data-category="kiz">Kız İsteme</button>
+            <button class="category-btn" data-category="sunnet">Sünnet</button>
+            <button class="category-btn" data-category="mev">Mevlüt</button>
+            <button class="category-btn" data-category="gelin">Gelin Alma</button>
+
+            
+        </div>
+
+        <div class="video-grid">
+            <div class="video-card" data-category="tanitim, kis, yaz">
+                <div class="video-container" data-video-id="g_B89Q2p6E4">
+                    <img src="https://img.youtube.com/vi/g_B89Q2p6E4/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="tanitim, kis">
+                <div class="video-container" data-video-id="dUpe08-Nuvs">
+                    <img src="https://img.youtube.com/vi/dUpe08-Nuvs/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="tanitim, yaz">
+                <div class="video-container" data-video-id="1BEHUStXLjc">
+                    <img src="https://img.youtube.com/vi/1BEHUStXLjc/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="salon, kis, dugun">
+                <div class="video-container" data-video-id="4NpxMFVJVqQ">
+                    <img src="https://img.youtube.com/vi/4NpxMFVJVqQ/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="hikaye, kis">
+                <div class="video-container" data-video-id="5U7eNzJj50k">
+                    <img src="https://img.youtube.com/vi/5U7eNzJj50k/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="hikaye, kis">
+                <div class="video-container" data-video-id="Jj-BkqDkFmg">
+                    <img src="https://img.youtube.com/vi/Jj-BkqDkFmg/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="hikaye, yaz">
+                <div class="video-container" data-video-id="DcWR6DZvjWk">
+                    <img src="https://img.youtube.com/vi/DcWR6DZvjWk/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="hikaye, yaz">
+                <div class="video-container" data-video-id="cjo5O-mQ4yk">
+                    <img src="https://img.youtube.com/vi/cjo5O-mQ4yk/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="hikaye, kina">
+                <div class="video-container" data-video-id="r2o-gCGSc4w">
+                    <img src="https://img.youtube.com/vi/r2o-gCGSc4w/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="hikaye">
+                <div class="video-container" data-video-id="1ZbWVt6UYjE">
+                    <img src="https://img.youtube.com/vi/1ZbWVt6UYjE/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="hikaye">
+                <div class="video-container" data-video-id="7mINYnGlbHA">
+                    <img src="https://img.youtube.com/vi/7mINYnGlbHA/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="hikaye, kina">
+                <div class="video-container" data-video-id="WSFFUW_ggyo">
+                    <img src="https://img.youtube.com/vi/WSFFUW_ggyo/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="klip">
+                <div class="video-container" data-video-id="dqJFM0txN3g">
+                    <img src="https://img.youtube.com/vi/dqJFM0txN3g/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="klip">
+                <div class="video-container" data-video-id="lAwttdfGUiE">
+                    <img src="https://img.youtube.com/vi/lAwttdfGUiE/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="music">
+                <div class="video-container" data-video-id="_DPdSmGn2T0">
+                    <img src="https://img.youtube.com/vi/_DPdSmGn2T0/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="klip">
+                <div class="video-container" data-video-id="HspdCH-MsoQ">
+                    <img src="https://img.youtube.com/vi/HspdCH-MsoQ/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="klip">
+                <div class="video-container" data-video-id="aDXzN4JfTEc">
+                    <img src="https://img.youtube.com/vi/aDXzN4JfTEc/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="hikaye">
+                <div class="video-container" data-video-id="Mbbao3oq4ik">
+                    <img src="https://img.youtube.com/vi/Mbbao3oq4ik/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="kiz">
+                <div class="video-container" data-video-id="bRkwsC7D1rM">
+                    <img src="https://img.youtube.com/vi/bRkwsC7D1rM/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="salon, kis">
+                <div class="video-container" data-video-id="MXXmWmBU8Vo">
+                    <img src="https://img.youtube.com/vi/MXXmWmBU8Vo/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="salon, kis">
+                <div class="video-container" data-video-id="qqn-3GEQd_g">
+                    <img src="https://img.youtube.com/vi/qqn-3GEQd_g/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="salon, kina-dugun, kis">
+                <div class="video-container" data-video-id="fQ8BvdPdRgM">
+                    <img src="https://img.youtube.com/vi/fQ8BvdPdRgM/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="yaz, dugun, salon">
+                <div class="video-container" data-video-id="gS82ogvfEQU">
+                    <img src="https://img.youtube.com/vi/gS82ogvfEQU/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="mev">
+                <div class="video-container" data-video-id="zOjGIlvZ-DM">
+                    <img src="https://img.youtube.com/vi/zOjGIlvZ-DM/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="kis, klip, kina">
+                <div class="video-container" data-video-id="4YymR4MUubk">
+                    <img src="https://img.youtube.com/vi/4YymR4MUubk/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="kis, salon, kina-dugun">
+                <div class="video-container" data-video-id="65Ka5O25SXc">
+                    <img src="https://img.youtube.com/vi/65Ka5O25SXc/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="kina-dugun, salon, kis">
+                <div class="video-container" data-video-id="FfZmSfqUIFY">
+                    <img src="https://img.youtube.com/vi/FfZmSfqUIFY/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="dugun, salon, kis">
+                <div class="video-container" data-video-id="Z9QgKS2lB9g">
+                    <img src="https://img.youtube.com/vi/Z9QgKS2lB9g/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="yaz, salon, dugun">
+                <div class="video-container" data-video-id="EAdyTVKUEUY">
+                    <img src="https://img.youtube.com/vi/EAdyTVKUEUY/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="kis, salon, dugun">
+                <div class="video-container" data-video-id="7oF2Yxf6E38">
+                    <img src="https://img.youtube.com/vi/7oF2Yxf6E38/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="kis, salon, dugun">
+                <div class="video-container" data-video-id="69ueThfCidg">
+                    <img src="https://img.youtube.com/vi/69ueThfCidg/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="yaz, dugun, salon">
+                <div class="video-container" data-video-id="f1LQlJTPOIY">
+                    <img src="https://img.youtube.com/vi/f1LQlJTPOIY/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="kiz">
+                <div class="video-container" data-video-id="oX8YXSMSdHM">
+                    <img src="https://img.youtube.com/vi/oX8YXSMSdHM/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="gelin">
+                <div class="video-container" data-video-id="DnJPViJ3bZo">
+                    <img src="https://img.youtube.com/vi/DnJPViJ3bZo/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="sunnet, salon, yaz">
+                <div class="video-container" data-video-id="jx03mtONhbI">
+                    <img src="https://img.youtube.com/vi/jx03mtONhbI/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="kis, dugun, salon">
+                <div class="video-container" data-video-id="fdI8A8QXotg">
+                    <img src="https://img.youtube.com/vi/fdI8A8QXotg/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="salon, kina-dugun, yaz">
+                <div class="video-container" data-video-id="Wnx-7Bl7eHk">
+                    <img src="https://img.youtube.com/vi/Wnx-7Bl7eHk/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="salon, dugun, yaz">
+                <div class="video-container" data-video-id="4gkYzXc8YkU">
+                    <img src="https://img.youtube.com/vi/4gkYzXc8YkU/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="dugun, salon, yaz">
+                <div class="video-container" data-video-id="0rfwIpccq5A">
+                    <img src="https://img.youtube.com/vi/0rfwIpccq5A/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="dugun, salon, yaz">
+                <div class="video-container" data-video-id="3S0oyNTUaWo">
+                    <img src="https://img.youtube.com/vi/3S0oyNTUaWo/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="dugun, yaz, salon">
+                <div class="video-container" data-video-id="cbytOjEmGk0">
+                    <img src="https://img.youtube.com/vi/cbytOjEmGk0/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="kina-dugun, yaz, salon">
+                <div class="video-container" data-video-id="Z-7KLQNIfuQ">
+                    <img src="https://img.youtube.com/vi/Z-7KLQNIfuQ/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="dugun, salon, yaz">
+                <div class="video-container" data-video-id="1ROROg59LbM">
+                    <img src="https://img.youtube.com/vi/1ROROg59LbM/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="nisan, salon, yaz">
+                <div class="video-container" data-video-id="L8mzlijyry4">
+                    <img src="https://img.youtube.com/vi/L8mzlijyry4/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="dugun, salon, yaz">
+                <div class="video-container" data-video-id="xfG0VholB7U">
+                    <img src="https://img.youtube.com/vi/xfG0VholB7U/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="dugun, salon, kis">
+                <div class="video-container" data-video-id="8he6EW_Urds">
+                    <img src="https://img.youtube.com/vi/8he6EW_Urds/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="kina-dugun, salon, yaz">
+                <div class="video-container" data-video-id="IiD8J3bFAlw">
+                    <img src="https://img.youtube.com/vi/IiD8J3bFAlw/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="kina-dugun, kis, salon">
+                <div class="video-container" data-video-id="4YZ0L1a1vWY">
+                    <img src="https://img.youtube.com/vi/4YZ0L1a1vWY/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="yaz, kina-dugun, salon">
+                <div class="video-container" data-video-id="MFkdMM-yyXc">
+                    <img src="https://img.youtube.com/vi/MFkdMM-yyXc/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="kina-dugun, kis, salon">
+                <div class="video-container" data-video-id="QT8a6qRSknE">
+                    <img src="https://img.youtube.com/vi/QT8a6qRSknE/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="kina-dugun, yaz, salon">
+                <div class="video-container" data-video-id="0_eU5CK07qg">
+                    <img src="https://img.youtube.com/vi/0_eU5CK07qg/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="gelin">
+                <div class="video-container" data-video-id="8H9GNpmHcpE">
+                    <img src="https://img.youtube.com/vi/8H9GNpmHcpE/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="mev">
+                <div class="video-container" data-video-id="L0ZqVppN7QM">
+                    <img src="https://img.youtube.com/vi/L0ZqVppN7QM/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="kina-dugun, salon, yaz">
+                <div class="video-container" data-video-id="Ire3HWVqDss">
+                    <img src="https://img.youtube.com/vi/Ire3HWVqDss/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="gelin">
+                <div class="video-container" data-video-id="zQcsjBAHr4g">
+                    <img src="https://img.youtube.com/vi/zQcsjBAHr4g/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="dugun, salon, yaz">
+                <div class="video-container" data-video-id="HFaKhDlUQI4">
+                    <img src="https://img.youtube.com/vi/HFaKhDlUQI4/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="gelin">
+                <div class="video-container" data-video-id="XdCJB8-g-DI">
+                    <img src="https://img.youtube.com/vi/XdCJB8-g-DI/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="nisan, klip">
+                <div class="video-container" data-video-id="rjuGfgQTx5g">
+                    <img src="https://img.youtube.com/vi/rjuGfgQTx5g/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="mev">
+                <div class="video-container" data-video-id="og6sP9isous">
+                    <img src="https://img.youtube.com/vi/og6sP9isous/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="dugun, kis, salon">
+                <div class="video-container" data-video-id="vPLkCMyNJMI">
+                    <img src="https://img.youtube.com/vi/vPLkCMyNJMI/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="klip">
+                <div class="video-container" data-video-id="l8Un8iSWVvY">
+                    <img src="https://img.youtube.com/vi/l8Un8iSWVvY/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="nisan, salon, kis">
+                <div class="video-container" data-video-id="Bt3JjcJsfpQ">
+                    <img src="https://img.youtube.com/vi/Bt3JjcJsfpQ/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="salon, dugun, kis">
+                <div class="video-container" data-video-id="M5VpiRcVUVo">
+                    <img src="https://img.youtube.com/vi/M5VpiRcVUVo/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="nisan, salon, kis">
+                <div class="video-container" data-video-id="kE45K-VBMWQ">
+                    <img src="https://img.youtube.com/vi/kE45K-VBMWQ/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="nisan, salon, kis">
+                <div class="video-container" data-video-id="YnAq0aNBesg">
+                    <img src="https://img.youtube.com/vi/YnAq0aNBesg/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="sunnet, mev">
+                <div class="video-container" data-video-id="3MmA0bOjNuQ">
+                    <img src="https://img.youtube.com/vi/3MmA0bOjNuQ/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="sunnet, mev">
+                <div class="video-container" data-video-id="iFWIERupYEU">
+                    <img src="https://img.youtube.com/vi/iFWIERupYEU/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="sunnet, salon, dis">
+                <div class="video-container" data-video-id="x0xApmU4u-Q">
+                    <img src="https://img.youtube.com/vi/x0xApmU4u-Q/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="dugun, salon, kis">
+                <div class="video-container" data-video-id="LBcslhqKW9c">
+                    <img src="https://img.youtube.com/vi/LBcslhqKW9c/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="gelin">
+                <div class="video-container" data-video-id="OcZAPIwy_y4">
+                    <img src="https://img.youtube.com/vi/OcZAPIwy_y4/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="salon, dis, dugun">
+                <div class="video-container" data-video-id="zpXOqZKKdRA">
+                    <img src="https://img.youtube.com/vi/zpXOqZKKdRA/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="kiz">
+                <div class="video-container" data-video-id="_O3-p3k3VkI">
+                    <img src="https://img.youtube.com/vi/_O3-p3k3VkI/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="klip">
+                <div class="video-container" data-video-id="_DPdSmGn2T0">
+                    <img src="https://img.youtube.com/vi/_DPdSmGn2T0/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="klip">
+                <div class="video-container" data-video-id="10bMZurHV1o">
+                    <img src="https://img.youtube.com/vi/10bMZurHV1o/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="hikaye">
+                <div class="video-container" data-video-id="vMqpaCWHfZs">
+                    <img src="https://img.youtube.com/vi/vMqpaCWHfZs/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="hikaye, salon">
+                <div class="video-container" data-video-id="iy_lENvvyUw">
+                    <img src="https://img.youtube.com/vi/iy_lENvvyUw/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="klip">
+                <div class="video-container" data-video-id="dT73x9Pai0I">
+                    <img src="https://img.youtube.com/vi/dT73x9Pai0I/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="nisan">
+                <div class="video-container" data-video-id="8RHvMAwKcRw">
+                    <img src="https://img.youtube.com/vi/8RHvMAwKcRw/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="tanitim, klip, hikaye">
+                <div class="video-container" data-video-id="7bgXn8-piTU">
+                    <img src="https://img.youtube.com/vi/7bgXn8-piTU/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="hikaye">
+                <div class="video-container" data-video-id="bIqfz95N8l0">
+                    <img src="https://img.youtube.com/vi/bIqfz95N8l0/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="klip">
+                <div class="video-container" data-video-id="fBhPwC_2hyM">
+                    <img src="https://img.youtube.com/vi/fBhPwC_2hyM/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="hikaye">
+                <div class="video-container" data-video-id="rOuPkrIH53s">
+                    <img src="https://img.youtube.com/vi/rOuPkrIH53s/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="hikaye">
+                <div class="video-container" data-video-id="HK36zyNlWeA">
+                    <img src="https://img.youtube.com/vi/HK36zyNlWeA/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="hikaye">
+                <div class="video-container" data-video-id="hgbzfWFsyyg">
+                    <img src="https://img.youtube.com/vi/hgbzfWFsyyg/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="modal-content">
+            <button class="close-button">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="video-wrapper">
+                <iframe id="modalVideo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/salon-video.js"></script>
+    <script src="js/mobile-menu.js"></script>
+</body>
+</html> 

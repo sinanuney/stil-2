@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yazlık Salon Albümü</title>
+    <link rel="stylesheet" href="css/salon-foto.css">
+    <link rel="stylesheet" href="css/stil-nav.css">
+    <link rel="stylesheet" href="css/album.css">
+    <link rel="stylesheet" href="css/mobile-menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-thumbnail.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">Ana Sayfa</a>
+            <div class="nav-links">
+                <!-- Hamburger button will be added here by JavaScript -->
+                <div class="nav-section">
+                    <a href="salon.html" class="nav-link">Salon</a>
+                    <a href="salon-foto.html" class="nav-link active">Salon Fotoğrafları</a>
+                    <a href="salon-video.html" class="nav-link">Salon Videoları</a>
+                </div>
+                <div class="nav-section">
+                    <a href="stil.html" class="nav-link">Stil</a>
+                    <a href="stil-foto.html" class="nav-link">Stil Fotoğrafları</a>
+                    <a href="stil-video.html" class="nav-link">Stil Videoları</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="album-container">
+        <div class="album-header">
+            <a href="salon-foto.html" class="back-button">← Geri</a>
+            <h1>Yazlık Salon Albümü</h1>
+        </div>
+        <div id="lightgallery"></div>
+    </div>
+
+    <!-- Album data -->
+    <script id="album-data" type="application/json">
+    {
+        "folder": "Yazlık Salon",
+        "photos": [
+            "b1.jpeg", "b2.jpeg", "b3.jpeg", "b4.jpeg",
+            "b5.jpeg", "b6.jpeg", "b7.jpeg", "b8.jpeg",
+            "b9.jpeg", "b10.jpeg", "b11.jpeg", "b12.jpeg",
+            "b13.jpeg", "b14.jpeg", "b15.jpeg", "b16.jpeg",
+            "b17.jpeg", "b18.jpeg", "b19.jpeg"
+        ]
+    }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/thumbnail/lg-thumbnail.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js"></script>
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/album.js"></script>
+</body>
+</html> 
