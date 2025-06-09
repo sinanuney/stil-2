@@ -158,31 +158,6 @@
     overflow: hidden;
 }
 
-/* Oynatma ikonu */
-.play-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 30px;
-    height: 30px;
-    background-color: rgba(255, 0, 0, 0.8);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 12px;
-    opacity: 0.9;
-    transition: transform 0.2s, opacity 0.2s;
-}
-
-.story:hover .play-icon {
-    transform: translate(-50%, -50%) scale(1.1);
-    opacity: 1;
-}
-
-/* Video player in modal */
 .story-modal video {
     max-width: 100%;
     max-height: 80vh;
@@ -190,43 +165,12 @@
     background-color: #000;
 }
 
-/* Video thumbnail container */
 .story-avatar {
     position: relative;
 }
 
-/* Video oynatma ikonu */
-.story-avatar.video::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 20px;
-    height: 20px;
-    background-color: #ff0000;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 10px;
-    border: 2px solid white;
-    z-index: 2;
-}
-
-.story-avatar.video::before {
-    content: '▶';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 10px;
-    z-index: 3;
+.story-avatar {
+    position: relative;
 }
 
 .story-username {

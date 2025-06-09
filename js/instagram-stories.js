@@ -32,18 +32,19 @@ document.addEventListener('DOMContentLoaded', function() {
             storyElement.href = '#';
             storyElement.dataset.id = story.id;
             
-            const isVideo = story.type === 'video';
-            // Video için önizleme resmi
-            const previewImage = `images/stories/thumbnails/thumbnails-${story.id + 1}.jpeg`;
-            const mediaElement = isVideo 
-                ? `<div class="video-preview-container">
-                     <img src="${previewImage}" alt="${story.username}" class="story-preview" onerror="this.src='images/default-avatar.png'">
-                     <div class="play-icon">▶</div>
-                   </div>`
-                : `<img src="${story.media}" alt="${story.username}" class="story-preview" onerror="this.src='images/default-avatar.png'">`;
+            // Hikaye önizleme resmi
+            const previewImg = document.createElement('img');
+            previewImg.src = `images/stories/thumbnails/thumbnails-${story.id + 1}.jpeg`;
+            previewImg.alt = story.username;
+            previewImg.className = 'story-preview';
+            previewImg.onerror = function() {
+                this.src = 'images/default-avatar.png';
+            };
+            
+            const mediaElement = previewImg.outerHTML;
             
             storyElement.innerHTML = `
-                <div class="story-avatar ${isVideo ? 'video' : ''}">
+                <div class="story-avatar">
                     ${mediaElement}
                 </div>
                 <span class="story-username">${story.username}</span>
