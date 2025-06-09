@@ -212,6 +212,8 @@
     max-height: 90vh;
     width: auto;
     height: auto;
+    transition: transform 0.3s ease, opacity 0.3s;
+    will-change: transform, opacity;
 }
 
 .story-modal-content img,
@@ -219,6 +221,35 @@
     max-width: 100%;
     max-height: 90vh;
     border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Mobil için tam ekran hikaye */
+@media (max-width: 768px) {
+    .story-modal-content {
+        width: 100%;
+        height: 100%;
+        max-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .story-modal-content img,
+    .story-modal-content video {
+        max-width: 100%;
+        max-height: 100vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+    }
+    
+    .close-story {
+        top: 20px;
+        right: 20px;
+        font-size: 30px;
+    }
 }
 
 .close-story {
