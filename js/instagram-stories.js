@@ -88,9 +88,8 @@ document.addEventListener('DOMContentLoaded', function() {
             content = `<img class="story-media" src="${story.media}" alt="${story.username}">`;
         }
         
-        // Mobil kontrolü
-        const isMobile = window.innerWidth <= 768;
-        const navButtons = isMobile ? '' : `
+        // Navigasyon okları (hem mobil hem masaüstü için)
+        const navButtons = `
             <div class="story-nav">
                 <button class="story-nav-button prev">&larr;</button>
                 <button class="story-nav-button next">&rarr;</button>
@@ -111,21 +110,19 @@ document.addEventListener('DOMContentLoaded', function() {
         const closeBtn = modal.querySelector('.close-story');
         closeBtn.addEventListener('click', closeStory);
         
-        // Masaüstü için gezinme işlemleri
-        if (!isMobile) {
-            const prevBtn = modal.querySelector('.prev');
-            const nextBtn = modal.querySelector('.next');
-            
-            prevBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                navigateStory(storyId, 'prev');
-            });
-            
-            nextBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                navigateStory(storyId, 'next');
-            });
-        }
+        // Tüm cihazlar için gezinme işlemleri
+        const prevBtn = modal.querySelector('.prev');
+        const nextBtn = modal.querySelector('.next');
+        
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navigateStory(storyId, 'prev');
+        });
+        
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navigateStory(storyId, 'next');
+        });
         
         // Klavye kontrolleri
         function handleKeyDown(e) {

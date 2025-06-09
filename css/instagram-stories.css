@@ -275,31 +275,51 @@
 }
 
 .story-nav-button {
-    background: transparent;
+    background: rgba(0, 0, 0, 0.3);
     border: none;
     color: white;
-    font-size: 24px;
-    width: 50px;
-    height: 100%;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0.7;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
 }
 
 .story-nav-button:hover {
     opacity: 1;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .story-nav-button.prev {
-    border-radius: 10px 0 0 10px;
+    left: 10px;
 }
 
 .story-nav-button.next {
-    border-radius: 0 10px 10px 0;
+    right: 10px;
+}
+
+/* Mobil için stil ayarları */
+@media (max-width: 768px) {
+    .story-nav-button {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+        opacity: 0.5;
+    }
+    
+    .story-nav-button:active {
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.7);
+    }
 }
 
 /* Responsive */
