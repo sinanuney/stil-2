@@ -3,7 +3,7 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0;
+    padding: 2px 0 0 0; /* Üst boşluğu azalttım */
     background-color: transparent;
     overflow-x: auto;
     scrollbar-width: none; /* Firefox */
@@ -36,7 +36,7 @@
     }
     
     .stories-container {
-        padding: 0;
+        padding: 20px 0 0 0; /* Web'de daha fazla üst boşluk */
         margin: 0 auto;
     }
     
