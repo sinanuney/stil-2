@@ -3,32 +3,253 @@ document.addEventListener('DOMContentLoaded', function() {
     const storiesData = [
         {
             id: 0,
-            username: 'Salon Görüntüleri',
+            username: '25.05.2024',
             medias: [
-                { type: 'image', src: 'images/salon/story-1.jpeg' },
-                { type: 'image', src: 'images/salon/story-2.jpeg' },
-                { type: 'image', src: 'images/salon/story-3.jpeg' }
+                { type: 'video', src: 'images/salon/25.05.2024/1.mov' },
+                { type: 'video', src: 'images/salon/25.05.2024/2.mov' },
+                { type: 'video', src: 'images/salon/25.05.2024/3.mov' },
+                { type: 'video', src: 'images/salon/25.05.2024/4.mov' },
+                { type: 'video', src: 'images/salon/25.05.2024/5.mov' }
             ],
             seen: false,
             currentMediaIndex: 0
         },
         {
             id: 1,
-            username: 'Video Klipler',
+            username: '24.05.2024',
             medias: [
-                { type: 'image', src: 'images/salon/story-5.jpg' },
-                { type: 'video', src: 'images/salon/story-6.MOV' },
-                { type: 'video', src: 'images/salon/story-7.MOV' }
+                { type: 'video', src: 'images/salon/24.05.2024/1.mov' },
+                { type: 'video', src: 'images/salon/24.05.2024/2.mov' },
+                { type: 'video', src: 'images/salon/24.05.2024/3.mov' },
+                { type: 'video', src: 'images/salon/24.05.2024/4.mov' },
+                { type: 'video', src: 'images/salon/24.05.2024/5.mov' },
+                { type: 'video', src: 'images/salon/24.05.2024/6.mov' },
+                { type: 'video', src: 'images/salon/24.05.2024/7.mov' },
+                { type: 'video', src: 'images/salon/24.05.2024/8.mov' }
             ],
             seen: false,
             currentMediaIndex: 0
         },
-        // Diğer hikayeler buraya eklenebilir
         {
             id: 2,
-            username: 'Diğer Görüntüler',
+            username: '18.05.2024',
             medias: [
-                { type: 'image', src: 'images/salon/story-4.jpeg' }
+                { type: 'video', src: 'images/salon/18.05.2024/18.05.2024 - 1.mov' },
+                { type: 'image', src: 'images/salon/18.05.2024/18.05.2024 - 2.jpeg' },
+                { type: 'video', src: 'images/salon/18.05.2024/18.05.2024 - 3.mov' },
+                { type: 'video', src: 'images/salon/18.05.2024/18.05.2024 - 4.mov' },
+                { type: 'video', src: 'images/salon/18.05.2024/18.05.2024 - 5.mov' },
+                { type: 'video', src: 'images/salon/18.05.2024/18.05.2024 - 6.mov' },
+                { type: 'video', src: 'images/salon/18.05.2024/18.05.2024 - 7.mov' }
+            ],
+            seen: false,
+            currentMediaIndex: 0
+        },
+        {
+            id: 3,
+            username: '12.05.2024',
+            medias: [
+                { type: 'video', src: 'images/salon/12.05.2024/12.05.2024 - 1.mov' },
+                { type: 'video', src: 'images/salon/12.05.2024/12.05.2024 - 2.mov' },
+                { type: 'video', src: 'images/salon/12.05.2024/12.05.2024 - 3.mov' },
+                { type: 'video', src: 'images/salon/12.05.2024/12.05.2024 - 4.mov' },
+                { type: 'video', src: 'images/salon/12.05.2024/12.05.2024 - 5.mov' },
+                { type: 'video', src: 'images/salon/12.05.2024/12.05.2024 - 6.mov' },
+                { type: 'video', src: 'images/salon/12.05.2024/12.05.2024 - 7.mov' }
+            ],
+            seen: false,
+            currentMediaIndex: 0
+        },
+        {
+            id: 4,
+            username: '05.05.2024 (1)',
+            medias: [
+                { type: 'image', src: 'images/salon/05.05.2024/1/05.05.2024 - 1.jpeg' },
+                { type: 'video', src: 'images/salon/05.05.2024/1/05.05.2024 - 2.mov' },
+                { type: 'video', src: 'images/salon/05.05.2024/1/05.05.2024 - 3.mov' },
+                { type: 'video', src: 'images/salon/05.05.2024/1/05.05.2024 - 4.mov' },
+                { type: 'video', src: 'images/salon/05.05.2024/1/05.05.2024 - 5.mov' }
+            ],
+            seen: false,
+            currentMediaIndex: 0
+        },
+        {
+            id: 5,
+            username: '05.05.2024 (2)',
+            medias: [
+                { type: 'video', src: 'images/salon/05.05.2024/2/05.05.2024 - 1.mov' },
+                { type: 'video', src: 'images/salon/05.05.2024/2/05.05.2024 - 2.mov' },
+                { type: 'video', src: 'images/salon/05.05.2024/2/05.05.2024 - 3.mov' }
+            ],
+            seen: false,
+            currentMediaIndex: 0
+        },
+        {
+            id: 6,
+            username: '28.04.2024',
+            medias: [
+                { type: 'video', src: 'images/salon/28.04.2024/28.04.2024 - 1.mov' },
+                { type: 'video', src: 'images/salon/28.04.2024/28.04.2024 - 2.mov' },
+                { type: 'video', src: 'images/salon/28.04.2024/28.04.2024 - 3.mov' },
+                { type: 'video', src: 'images/salon/28.04.2024/28.04.2024 - 4.mov' },
+                { type: 'video', src: 'images/salon/28.04.2024/28.04.2024 - 5.mov' },
+                { type: 'video', src: 'images/salon/28.04.2024/28.04.2024 - 6.mov' }
+            ],
+            seen: false,
+            currentMediaIndex: 0
+        },
+        {
+            id: 7,
+            username: '27.04.2024',
+            medias: [
+                { type: 'video', src: 'images/salon/27.04.2024/27.04.2024 - 1.mov' },
+                { type: 'video', src: 'images/salon/27.04.2024/27.04.2024 - 2.mov' },
+                { type: 'video', src: 'images/salon/27.04.2024/27.04.2024 - 3.mov' }
+            ],
+            seen: false,
+            currentMediaIndex: 0
+        },
+        {
+            id: 8,
+            username: '14.04.2024',
+            medias: [
+                { type: 'video', src: 'images/salon/14.04.2024/14.04.2024 - 1.mov' },
+                { type: 'video', src: 'images/salon/14.04.2024/14.04.2024 - 2.mov' },
+                { type: 'video', src: 'images/salon/14.04.2024/14.04.2024 - 3.mov' },
+                { type: 'video', src: 'images/salon/14.04.2024/14.04.2024 - 4.mov' },
+                { type: 'video', src: 'images/salon/14.04.2024/14.04.2024 - 5.mov' },
+                { type: 'video', src: 'images/salon/14.04.2024/14.04.2024 - 6.mov' },
+                { type: 'video', src: 'images/salon/14.04.2024/14.04.2024 - 7.mov' },
+                { type: 'video', src: 'images/salon/14.04.2024/14.04.2024 - 8.mov' },
+                { type: 'video', src: 'images/salon/14.04.2024/14.04.2024 - 9.mov' }
+            ],
+            seen: false,
+            currentMediaIndex: 0
+        },
+        {
+            id: 9,
+            username: '13.04.2024',
+            medias: [
+                { type: 'video', src: 'images/salon/13.04.2024/13.04.2024 - 1.mov' },
+                { type: 'video', src: 'images/salon/13.04.2024/13.04.2024 - 2.mov' },
+                { type: 'video', src: 'images/salon/13.04.2024/13.04.2024 - 3.mov' },
+                { type: 'video', src: 'images/salon/13.04.2024/13.04.2024 - 4.mov' },
+                { type: 'video', src: 'images/salon/13.04.2024/34922258091041fdbd378f679398c82d.mov' },
+                { type: 'video', src: 'images/salon/13.04.2024/51e6bb1ffbe94f7a80cb20d37167be64.mov' },
+                { type: 'video', src: 'images/salon/13.04.2024/dd9523ffe9c549e3a60c4699f06716e5.mov' },
+                { type: 'video', src: 'images/salon/13.04.2024/ed32787228f74423a4301fc6cfcae6fe.mov' }
+            ],
+            seen: false,
+            currentMediaIndex: 0
+        },
+        {
+            id: 10,
+            username: '24.02.2024',
+            medias: [
+                { type: 'video', src: 'images/salon/24.02.2024/24.02.2024 - 1.mov' },
+                { type: 'video', src: 'images/salon/24.02.2024/24.02.2024 - 2.mov' },
+                { type: 'video', src: 'images/salon/24.02.2024/24.02.2024 - 3.mov' },
+                { type: 'video', src: 'images/salon/24.02.2024/24.02.2024 - 4.mov' },
+                { type: 'video', src: 'images/salon/24.02.2024/24.02.2024 - 5.mov' },
+                { type: 'video', src: 'images/salon/24.02.2024/24.02.2024 - 6.mov' },
+                { type: 'video', src: 'images/salon/24.02.2024/24.02.2024 - 7.mov' },
+                { type: 'video', src: 'images/salon/24.02.2024/24.02.2024 - 8.mov' },
+                { type: 'video', src: 'images/salon/24.02.2024/24.02.2024 - 9.mov' },
+                { type: 'video', src: 'images/salon/24.02.2024/24.02.2024 - 10.mov' },
+                { type: 'video', src: 'images/salon/24.02.2024/24.02.2024 - 11.mov' }
+            ],
+            seen: false,
+            currentMediaIndex: 0
+        },
+        {
+            id: 11,
+            username: '20.01.2024',
+            medias: [
+                { type: 'video', src: 'images/salon/20.01.2024/20.01.2024 - 1.mov' },
+                { type: 'video', src: 'images/salon/20.01.2024/20.01.2024 - 2.mov' },
+                { type: 'video', src: 'images/salon/20.01.2024/20.01.2024 - 3.mov' },
+                { type: 'video', src: 'images/salon/20.01.2024/20.01.2024 - 4.mov' },
+                { type: 'video', src: 'images/salon/20.01.2024/20.01.2024 - 5.mov' }
+            ],
+            seen: false,
+            currentMediaIndex: 0
+        },
+        {
+            id: 12,
+            username: '03.03.2024 (1)',
+            medias: [
+                { type: 'video', src: 'images/salon/03.03.2024/1/23.03.2024 - 1.mov' },
+                { type: 'video', src: 'images/salon/03.03.2024/1/23.03.2024 - 2.mov' }
+            ],
+            seen: false,
+            currentMediaIndex: 0
+        },
+        {
+            id: 13,
+            username: '03.03.2024 (2)',
+            medias: [
+                { type: 'video', src: 'images/salon/03.03.2024/2/23.03.2024 - 1.mov' },
+                { type: 'video', src: 'images/salon/03.03.2024/2/23.03.2024 - 2.mov' },
+                { type: 'video', src: 'images/salon/03.03.2024/2/23.03.2024 - 3.mov' },
+                { type: 'video', src: 'images/salon/03.03.2024/2/23.03.2024 - 4.mov' }
+            ],
+            seen: false,
+            currentMediaIndex: 0
+        },
+        // 24.02.2024
+        {
+            id: 10,
+            username: '24.02.2024',
+            medias: [
+                { type: 'video', src: 'images/salon/24.02.2024/24.02.2024 - 1.mov' },
+                { type: 'video', src: 'images/salon/24.02.2024/24.02.2024 - 2.mov' },
+                { type: 'video', src: 'images/salon/24.02.2024/24.02.2024 - 3.mov' },
+                { type: 'video', src: 'images/salon/24.02.2024/24.02.2024 - 4.mov' },
+                { type: 'video', src: 'images/salon/24.02.2024/24.02.2024 - 5.mov' },
+                { type: 'video', src: 'images/salon/24.02.2024/24.02.2024 - 6.mov' },
+                { type: 'video', src: 'images/salon/24.02.2024/24.02.2024 - 7.mov' },
+                { type: 'video', src: 'images/salon/24.02.2024/24.02.2024 - 8.mov' },
+                { type: 'video', src: 'images/salon/24.02.2024/24.02.2024 - 9.mov' },
+                { type: 'video', src: 'images/salon/24.02.2024/24.02.2024 - 10.mov' },
+                { type: 'video', src: 'images/salon/24.02.2024/24.02.2024 - 11.mov' }
+            ],
+            seen: false,
+            currentMediaIndex: 0
+        },
+        // 03.03.2024 (2)
+        {
+            id: 11,
+            username: '03.03.2024 (2)',
+            medias: [
+                { type: 'video', src: 'images/salon/03.03.2024/2/23.03.2024 - 1.mov' },
+                { type: 'video', src: 'images/salon/03.03.2024/2/23.03.2024 - 2.mov' },
+                { type: 'video', src: 'images/salon/03.03.2024/2/23.03.2024 - 3.mov' },
+                { type: 'video', src: 'images/salon/03.03.2024/2/23.03.2024 - 4.mov' }
+            ],
+            seen: false,
+            currentMediaIndex: 0
+        },
+        // 03.03.2024 (1)
+        {
+            id: 12,
+            username: '03.03.2024 (1)',
+            medias: [
+                { type: 'video', src: 'images/salon/03.03.2024/1/23.03.2024 - 1.mov' },
+                { type: 'video', src: 'images/salon/03.03.2024/1/23.03.2024 - 2.mov' }
+            ],
+            seen: false,
+            currentMediaIndex: 0
+        },
+        // 20.01.2024
+        {
+            id: 13,
+            username: '20.01.2024',
+            medias: [
+                { type: 'video', src: 'images/salon/20.01.2024/20.01.2024 - 1.mov' },
+                { type: 'video', src: 'images/salon/20.01.2024/20.01.2024 - 2.mov' },
+                { type: 'video', src: 'images/salon/20.01.2024/20.01.2024 - 3.mov' },
+                { type: 'video', src: 'images/salon/20.01.2024/20.01.2024 - 4.mov' },
+                { type: 'video', src: 'images/salon/20.01.2024/20.01.2024 - 5.mov' }
             ],
             seen: false,
             currentMediaIndex: 0
@@ -410,6 +631,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
+    // Aktif videoyu durdur
+    function stopCurrentVideo() {
+        const activeVideo = document.querySelector('.story-media-container.active video');
+        if (activeVideo) {
+            activeVideo.pause();
+            activeVideo.currentTime = 0;
+        }
+    }
+    
     // Medya güncelleme
     function updateMedia(storyId, mediaIndex) {
         const modal = document.getElementById('storyModal');
@@ -417,6 +647,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const story = storiesData.find(s => s.id === storyId);
         if (!story) return;
+        
+        // Mevcut aktif medyayı durdur
+        stopCurrentVideo();
         
         // Güncel medya indeksini kaydet
         story.currentMediaIndex = mediaIndex;
