@@ -667,7 +667,38 @@ document.addEventListener('DOMContentLoaded', function() {
             const video = currentMedia.querySelector('video');
             if (video) {
                 video.currentTime = 0;
-                video.play().catch(e => console.log('Video oynatılamadı:', e));
+                // Mute the video to allow autoplay in most browsers
+                video.muted = true;
+                // Try to play the video
+                const playPromise = video.play();
+                
+                // If autoplay was prevented, show a play button
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        console.log('Video oynatılamadı, kullanıcı etkileşimi gerekebilir:', error);
+                        // Add a play button overlay
+                        const playButton = document.createElement('div');
+                        playButton.className = 'video-play-button';
+                        playButton.innerHTML = '▶';
+                        playButton.style.position = 'absolute';
+                        playButton.style.top = '50%';
+                        playButton.style.left = '50%';
+                        playButton.style.transform = 'translate(-50%, -50%)';
+                        playButton.style.fontSize = '48px';
+                        playButton.style.color = 'white';
+                        playButton.style.cursor = 'pointer';
+                        playButton.style.zIndex = '1000';
+                        playButton.onclick = (e) => {
+                            e.stopPropagation();
+                            video.muted = true;
+                            video.play().then(() => {
+                                playButton.style.display = 'none';
+                            });
+                        };
+                        currentMedia.style.position = 'relative';
+                        currentMedia.appendChild(playButton);
+                    });
+                }
             }
             
             // Noktaları güncelle
