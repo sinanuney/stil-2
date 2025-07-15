@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const img = document.createElement('img');
         img.src = `images/${albumData.folder}/${photo}`;
         img.alt = photo;
+        img.loading = "lazy";
         
         a.appendChild(img);
         gallery.appendChild(a);
