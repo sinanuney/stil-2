@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Galerisi</title>
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="css/salon-video.css">
@@ -20,16 +21,16 @@
         /* Mobile menu styles are in mobile-menu.css */
     </style>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
-            
+
             if (hamburger) {
-                hamburger.addEventListener('click', function() {
+                hamburger.addEventListener('click', function () {
                     this.classList.toggle('active');
                     navLinks.classList.toggle('active');
                 });
-                
+
                 // Close menu when clicking on a nav link
                 document.querySelectorAll('.nav-link').forEach(link => {
                     link.addEventListener('click', () => {
@@ -42,13 +43,15 @@
     </script>
     <link rel="stylesheet" href="css/back-button.css">
 </head>
+
 <body>
     <!-- Back Button -->
 
-    
+
     <nav class="nav-container">
         <div class="nav-content">
-            <a href="index.html" class="nav-logo"><img src="images/salon-logo.png" alt="Ana Sayfa" class="logo-image"></a>
+            <a href="index.html" class="nav-logo"><img src="images/salon-logo.png" alt="Ana Sayfa"
+                    class="logo-image"></a>
             <button class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -64,8 +67,8 @@
                     <a href="stil.html" class="nav-link">Stil</a>
                     <a href="stil-foto.html" class="nav-link">Stil Fotoğrafları</a>
                     <a href="stil-video.html" class="nav-link">Stil Videoları</a>
-                    <a href="iletisim.html" class="nav-link">İletişim</a>   
-                    
+                    <a href="iletisim.html" class="nav-link">İletişim</a>
+
                 </div>
             </div>
         </div>
@@ -89,7 +92,7 @@
             <button class="category-btn" data-category="mev">Mevlüt</button>
             <button class="category-btn" data-category="gelin">Gelin Alma</button>
 
-            
+
         </div>
 
         <div class="video-grid">
@@ -117,6 +120,153 @@
                     <div class="play-button">
                         <i class="fas fa-play"></i>
                     </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="">
+                <div class="video-container" data-video-id="LHqifdTTtJQ">
+                    <img src="https://img.youtube.com/vi/LHqifdTTtJQ/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button"><i class="fas fa-play"></i></div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="">
+                <div class="video-container" data-video-id="lhF_FLRmaXo">
+                    <img src="https://img.youtube.com/vi/lhF_FLRmaXo/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button"><i class="fas fa-play"></i></div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="">
+                <div class="video-container" data-video-id="Mx1pwWuXyiI">
+                    <img src="https://img.youtube.com/vi/Mx1pwWuXyiI/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button"><i class="fas fa-play"></i></div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="">
+                <div class="video-container" data-video-id="tr-krqb__78">
+                    <img src="https://img.youtube.com/vi/tr-krqb__78/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button"><i class="fas fa-play"></i></div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="">
+                <div class="video-container" data-video-id="OON2xeTe2BU">
+                    <img src="https://img.youtube.com/vi/OON2xeTe2BU/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button"><i class="fas fa-play"></i></div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="">
+                <div class="video-container" data-video-id="joIoU_mMk8Y">
+                    <img src="https://img.youtube.com/vi/joIoU_mMk8Y/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button"><i class="fas fa-play"></i></div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="">
+                <div class="video-container" data-video-id="sz3ozlU4dbg">
+                    <img src="https://img.youtube.com/vi/sz3ozlU4dbg/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button"><i class="fas fa-play"></i></div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="">
+                <div class="video-container" data-video-id="pBCie6Rd08Y">
+                    <img src="https://img.youtube.com/vi/pBCie6Rd08Y/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button"><i class="fas fa-play"></i></div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="">
+                <div class="video-container" data-video-id="dC6ykyPQEs4">
+                    <img src="https://img.youtube.com/vi/dC6ykyPQEs4/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button"><i class="fas fa-play"></i></div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="">
+                <div class="video-container" data-video-id="OXD2v3x94DM">
+                    <img src="https://img.youtube.com/vi/OXD2v3x94DM/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button"><i class="fas fa-play"></i></div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="">
+                <div class="video-container" data-video-id="4bcjPSlBflA">
+                    <img src="https://img.youtube.com/vi/4bcjPSlBflA/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button"><i class="fas fa-play"></i></div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="">
+                <div class="video-container" data-video-id="7CO0WsN9ctI">
+                    <img src="https://img.youtube.com/vi/7CO0WsN9ctI/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button"><i class="fas fa-play"></i></div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="">
+                <div class="video-container" data-video-id="DfxV4pcD1AU">
+                    <img src="https://img.youtube.com/vi/DfxV4pcD1AU/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button"><i class="fas fa-play"></i></div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="">
+                <div class="video-container" data-video-id="IMP3ExWeUWQ">
+                    <img src="https://img.youtube.com/vi/IMP3ExWeUWQ/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button"><i class="fas fa-play"></i></div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="">
+                <div class="video-container" data-video-id="OwLYTTAmB5M">
+                    <img src="https://img.youtube.com/vi/OwLYTTAmB5M/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button"><i class="fas fa-play"></i></div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="">
+                <div class="video-container" data-video-id="X2WLqe8W2So">
+                    <img src="https://img.youtube.com/vi/X2WLqe8W2So/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button"><i class="fas fa-play"></i></div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="">
+                <div class="video-container" data-video-id="jdL2moE77y0">
+                    <img src="https://img.youtube.com/vi/jdL2moE77y0/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button"><i class="fas fa-play"></i></div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="">
+                <div class="video-container" data-video-id="fWE9e9hIhWc">
+                    <img src="https://img.youtube.com/vi/fWE9e9hIhWc/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button"><i class="fas fa-play"></i></div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="">
+                <div class="video-container" data-video-id="_ardKhRdras">
+                    <img src="https://img.youtube.com/vi/_ardKhRdras/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button"><i class="fas fa-play"></i></div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="">
+                <div class="video-container" data-video-id="bW2Fi6pqrH8">
+                    <img src="https://img.youtube.com/vi/bW2Fi6pqrH8/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button"><i class="fas fa-play"></i></div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="">
+                <div class="video-container" data-video-id="zcA8kG63FZ8">
+                    <img src="https://img.youtube.com/vi/zcA8kG63FZ8/maxresdefault.jpg" alt="Video thumbnail">
+                    <div class="play-button"><i class="fas fa-play"></i></div>
                 </div>
             </div>
 
@@ -858,13 +1008,16 @@
                 <i class="fas fa-times"></i>
             </button>
             <div class="video-wrapper">
-                <iframe id="modalVideo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe id="modalVideo" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </div>
         </div>
     </div>
 
     <script src="js/salon-video.js"></script>
     <script src="js/mobile-menu.js"></script>
-        <script src="/js/back-button.js"></script>
+    <script src="js/back-button.js"></script>
 </body>
-</html> 
+
+</html>

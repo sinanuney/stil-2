@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salon</title>
+    <title>Stil Fotoğrafçılık & Video | Nazilli</title>
+    <meta name="description"
+        content="Nazilli'de özel günleriniz için profesyonel fotoğraf ve video çekimi, dış çekim, düğün hikayesi ve drone çekimi hizmetleri.">
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="css/salon.css">
     <link rel="stylesheet" href="css/stil-nav.css">
@@ -17,10 +20,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/instagram-stories.css">
 </head>
+
 <body>
     <nav class="nav-container">
         <div class="nav-content">
-            <a href="index.html" class="nav-logo"><img src="images/stil-logo.png" alt="Ana Sayfa" class="logo-image"></a>
+            <a href="index.html" class="nav-logo"><img src="images/stil-logo.png" alt="Ana Sayfa"
+                    class="logo-image"></a>
             <div class="nav-links">
                 <div class="nav-section">
                     <a href="salon.html" class="nav-link">Salon</a>
@@ -32,7 +37,7 @@
                     <a href="stil-foto.html" class="nav-link">Stil Fotoğrafları</a>
                     <a href="stil-video.html" class="nav-link">Stil Videoları</a>
                     <a href="iletisim.html" class="nav-link">İletişim</a>
-                    
+
                 </div>
             </div>
             <!-- Hamburger button will be added here by JavaScript -->
@@ -64,9 +69,9 @@
             </div>
         </div>
     </div>
-    
-    
-    
+
+
+
     <footer class="contact-section">
         <div class="contact-container">
             <div class="contact-info">
@@ -107,69 +112,9 @@
     <script src="js/envelope.js"></script>
     <script src="js/mobile-menu.js"></script>
     <script src="js/instagram-stories.js"></script>
-    <script src="/js/back-button.js"></script>
+    <script src="js/back-button.js"></script>
 
-    <script>
-        // Mobile menu toggle functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.nav-links');
-            const navContainer = document.querySelector('.nav-container');
-            const body = document.body;
-            
-            if (hamburger) {
-                hamburger.addEventListener('click', function() {
-                    // Toggle active class on hamburger and nav-links
-                    this.classList.toggle('active');
-                    navLinks.classList.toggle('active');
-                    body.classList.toggle('menu-open');
-                    
-                    // Toggle aria-expanded for accessibility
-                    const isExpanded = this.getAttribute('aria-expanded') === 'true' || false;
-                    this.setAttribute('aria-expanded', !isExpanded);
-                    
-                    // Toggle aria-label based on state
-                    if (isExpanded) {
-                        this.setAttribute('aria-label', 'Menüyü aç');
-                    } else {
-                        this.setAttribute('aria-label', 'Menüyü kapat');
-                    }
-                });
-                
-                // Close menu when clicking on a nav link
-                document.querySelectorAll('.nav-link').forEach(link => {
-                    link.addEventListener('click', () => {
-                        hamburger.classList.remove('active');
-                        navLinks.classList.remove('active');
-                        body.classList.remove('menu-open');
-                        hamburger.setAttribute('aria-expanded', 'false');
-                        hamburger.setAttribute('aria-label', 'Menüyü aç');
-                    });
-                });
-                
-                // Close menu when clicking outside
-                document.addEventListener('click', (e) => {
-                    if (!navContainer.contains(e.target) && !hamburger.contains(e.target)) {
-                        hamburger.classList.remove('active');
-                        navLinks.classList.remove('active');
-                        body.classList.remove('menu-open');
-                        hamburger.setAttribute('aria-expanded', 'false');
-                        hamburger.setAttribute('aria-label', 'Menüyü aç');
-                    }
-                });
-                
-                // Prevent body scroll when menu is open
-                const observer = new MutationObserver(() => {
-                    if (body.classList.contains('menu-open')) {
-                        body.style.overflow = 'hidden';
-                    } else {
-                        body.style.overflow = '';
-                    }
-                });
-                
-                observer.observe(body, { attributes: true, attributeFilter: ['class'] });
-            }
-        });
-    </script>
+
 </body>
+
 </html>
